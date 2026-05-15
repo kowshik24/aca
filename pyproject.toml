@@ -12,6 +12,7 @@ dependencies = [
   "numpy>=1.26",
   "transformers>=4.44",
   "accelerate>=0.33",
+  "python-dotenv>=1.0",
   "pandas>=2.2",
   "matplotlib>=3.8",
   "seaborn>=0.13",

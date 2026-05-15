@@ -20,6 +20,12 @@ Amortized Causal Abstraction with compositional rewrite rules for multi-hop reas
 pip install -e .
 ```
 
+Create `.env` (optional, for gated model access):
+
+```bash
+cp .env.example .env
+```
+
 ## Run
 
 Full run (real model):

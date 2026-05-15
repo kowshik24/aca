@@ -1,9 +1,11 @@
 from __future__ import annotations
 
 import argparse
+import os
 from pathlib import Path
 
 import torch
+from dotenv import load_dotenv
 
 from acar.baselines import StaticIITBaseline
 from acar.config import DataConfig, EvalConfig, ModelConfig, TrainConfig
@@ -81,6 +83,11 @@ def eval_method(method_name: str, llm, method_model, splits, data_cfg, eval_cfg,
 
 
 def main() -> None:
+    load_dotenv()
+    hf_token = os.getenv("HF_TOKEN")
+    if hf_token and "HUGGINGFACE_HUB_TOKEN" not in os.environ:
+        os.environ["HUGGINGFACE_HUB_TOKEN"] = hf_token
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--use-stub", action="store_true", help="Use local stub backend instead of OLMo/Llama")
     parser.add_argument("--llm-name", default=None)
