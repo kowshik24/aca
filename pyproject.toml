@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "acar"
+version = "0.2.0"
+description = "Amortized Causal Abstraction with Compositional Rewrite Rules"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.2",
+  "numpy>=1.26",
+  "transformers>=4.44",
+  "accelerate>=0.33",
+  "pandas>=2.2",
+  "matplotlib>=3.8",
+  "seaborn>=0.13",
+]
+
+[tool.setuptools]
+packages = ["acar"]
